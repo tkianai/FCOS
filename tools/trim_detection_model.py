@@ -40,7 +40,10 @@ DETECTRON_PATH = os.path.expanduser(args.pretrained_path)
 print('detectron path: {}'.format(DETECTRON_PATH))
 
 cfg.merge_from_file(args.cfg)
-_d = load_c2_format(cfg, DETECTRON_PATH)
+# for caffe2
+# _d = load_c2_format(cfg, DETECTRON_PATH)
+# for pytorch
+_d = torch.load(args.pretrained_path, map_location=torch.device("cpu"))
 newdict = _d
 
 newdict['model'] = removekey(_d['model'],

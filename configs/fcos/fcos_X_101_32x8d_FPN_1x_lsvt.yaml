@@ -38,4 +38,4 @@ SOLVER:
   WARMUP_METHOD: "constant"
 TEST:
   IMS_PER_BATCH: 16
-OUTPUT_DIR: './work_dir/fcos/fcos_X_101_32x8d_FPN_2x_lsvt'
+OUTPUT_DIR: './work_dir/fcos/fcos_X_101_32x8d_FPN_1x_lsvt'

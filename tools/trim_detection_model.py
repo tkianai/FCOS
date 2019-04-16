@@ -42,11 +42,12 @@ print('detectron path: {}'.format(DETECTRON_PATH))
 cfg.merge_from_file(args.cfg)
 # for caffe2
 # _d = load_c2_format(cfg, DETECTRON_PATH)
+# newdict = _d
 # for pytorch
 _d = torch.load(args.pretrained_path, map_location=torch.device("cpu"))
-newdict = _d
+newdict = {}
 
 newdict['model'] = removekey(_d['model'],
-                             ['rpn.head.cls_logits.bias', 'rpn.head.cls_logits.weight'])
+                             ['module.rpn.head.cls_logits.bias', 'module.rpn.head.cls_logits.weight'])
 torch.save(newdict, args.save_path)
 print('saved to {}.'.format(args.save_path))

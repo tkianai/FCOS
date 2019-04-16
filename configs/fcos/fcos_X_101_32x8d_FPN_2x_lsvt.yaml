@@ -22,7 +22,7 @@ DATASETS:
   TRAIN: ("icdar_lsvt_train_cocostyle",)
   TEST: ("icdar_lsvt_val_cocostyle",)
 INPUT:
-  MIN_SIZE_RANGE_TRAIN: (1000, 1300)
+  MIN_SIZE_TRAIN: (1000, 1300)
   MAX_SIZE_TRAIN: 1600
   MIN_SIZE_TEST: 1300
   MAX_SIZE_TEST: 1600

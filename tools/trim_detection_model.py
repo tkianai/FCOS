@@ -44,7 +44,6 @@ _d = load_c2_format(cfg, DETECTRON_PATH)
 newdict = _d
 
 newdict['model'] = removekey(_d['model'],
-                             ['cls_score.bias', 'cls_score.weight', 'bbox_pred.bias', 'bbox_pred.weight',
-                              'mask_fcn_logits.bias', 'mask_fcn_logits.weight'])
+                             ['rpn.head.cls_logits.bias', 'rpn.head.cls_logits.weight'])
 torch.save(newdict, args.save_path)
 print('saved to {}.'.format(args.save_path))
